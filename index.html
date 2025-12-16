@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LANEDU - Aprende tecnología trabajando como en la industria</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    * {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+    
+    .tech-badge {
+      transition: all 0.2s ease;
+    }
+    
+    .tech-badge:hover {
+      transform: scale(1.05);
+      background-color: #3b82f6;
+      color: white;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+  
+  <!-- Header -->
+  <header class="border-b border-gray-200">
+    <div class="max-w-6xl mx-auto px-6 py-6">
+      <div class="flex items-center justify-between">
+        <h1 class="text-2xl font-bold">LANEDU</h1>
+        <a href="#empieza" class="bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+          Empieza hoy
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="max-w-6xl mx-auto px-6 py-24 text-center">
+    <h2 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+      Aprende tecnología trabajando<br/>
+      <span class="gradient-text">como en la industria</span>
+    </h2>
+    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+      En LANEDU aprendes resolviendo desafíos reales, usando las mismas herramientas y procesos que se utilizan en equipos profesionales.
+    </p>
+    <div class="mt-12">
+      <p class="text-2xl font-semibold text-gray-900">No solo estudias.<br/>Contribuyes.</p>
+    </div>
+  </section>
+
+  <!-- Cómo funciona -->
+  <section class="bg-gray-50 py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <h3 class="text-4xl font-bold mb-16 text-center">¿Cómo funciona?</h3>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-xl card-hover border border-gray-200">
+          <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+          <h4 class="text-xl font-semibold mb-3">Desafíos prácticos en repositorios reales</h4>
+        </div>
+        
+        <div class="bg-white p-8 rounded-xl card-hover border border-gray-200">
+          <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+          </div>
+          <h4 class="text-xl font-semibold mb-3">Trabajo colaborativo con GitHub y Visual Studio</h4>
+        </div>
+        
+        <div class="bg-white p-8 rounded-xl card-hover border border-gray-200">
+          <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+            </svg>
+          </div>
+          <h4 class="text-xl font-semibold mb-3">Evaluación mediante Pull Requests y revisiones</h4>
+        </div>
+        
+        <div class="bg-white p-8 rounded-xl card-hover border border-gray-200">
+          <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+            </svg>
+          </div>
+          <h4 class="text-xl font-semibold mb-3">Documentación viva, no PDFs estáticos</h4>
+        </div>
+      </div>
+      <p class="text-2xl font-semibold text-center mt-16">Aprendes haciendo, no mirando.</p>
+    </div>
+  </section>
+
+  <!-- Qué te llevas -->
+  <section class="max-w-6xl mx-auto px-6 py-20">
+    <h3 class="text-4xl font-bold mb-16 text-center">¿Qué te llevas?</h3>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="text-center p-6">
+        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+          </svg>
+        </div>
+        <h4 class="font-semibold text-lg mb-2">Experiencia real comprobable</h4>
+      </div>
+      
+      <div class="text-center p-6">
+        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path>
+          </svg>
+        </div>
+        <h4 class="font-semibold text-lg mb-2">Pull Requests revisados</h4>
+      </div>
+      
+      <div class="text-center p-6">
+        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+          </svg>
+        </div>
+        <h4 class="font-semibold text-lg mb-2">Portafolio público</h4>
+      </div>
+      
+      <div class="text-center p-6">
+        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+          </svg>
+        </div>
+        <h4 class="font-semibold text-lg mb-2">Certificación basada en evidencia</h4>
+      </div>
+    </div>
+    <p class="text-2xl font-semibold text-center mt-16">Lo que sabes se demuestra.</p>
+  </section>
+
+  <!-- Tecnologías -->
+  <section class="bg-gray-50 py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <h3 class="text-4xl font-bold mb-12 text-center">Tecnologías</h3>
+      <div class="flex flex-wrap justify-center gap-4 mb-16">
+        <span class="tech-badge px-6 py-3 bg-white border border-gray-300 rounded-lg font-medium cursor-pointer">Git</span>
+        <span class="tech-badge px-6 py-3 bg-white border border-gray-300 rounded-lg font-medium cursor-pointer">Python</span>
+        <span class="tech-badge px-6 py-3 bg-white border border-gray-300 rounded-lg font-medium cursor-pointer">.NET</span>
+        <span class="tech-badge px-6 py-3 bg-white border border-gray-300 rounded-lg font-medium cursor-pointer">PostgreSQL</span>
+        <span class="tech-badge px-6 py-3 bg-white border border-gray-300 rounded-lg font-medium cursor-pointer">Docker</span>
+        <span class="tech-badge px-6 py-3 bg-white border border-gray-300 rounded-lg font-medium cursor-pointer">Linux</span>
+      </div>
+      <p class="text-2xl font-semibold text-center">La tecnología cambia.<br/>El método no.</p>
+    </div>
+  </section>
+
+  <!-- LANEDU Labs -->
+  <section class="max-w-6xl mx-auto px-6 py-20">
+    <div class="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-12 text-white text-center">
+      <h3 class="text-4xl font-bold mb-6">LANEDU Labs</h3>
+      <p class="text-xl mb-4 opacity-90">Nuestro laboratorio abierto donde ocurre el aprendizaje colaborativo.</p>
+      <p class="text-2xl font-semibold">Aquí se aprende como se trabaja.</p>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section id="empieza" class="bg-gray-50 py-20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h3 class="text-4xl font-bold mb-6">Empieza hoy</h3>
+      <p class="text-xl text-gray-600 mb-10">Explora LANEDU Labs o participa en nuestros programas guiados.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#" class="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg">
+          Explorar Labs
+        </a>
+        <a href="#" class="bg-white text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors font-semibold text-lg">
+          Ver programas
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 py-12">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <p class="text-2xl font-semibold text-gray-900 mb-4">Aprende haciendo. Aprende con LANEDU.</p>
+      <p class="text-gray-600">© 2025 LANEDU. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
