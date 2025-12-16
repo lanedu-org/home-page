@@ -6,201 +6,271 @@
   <title>LANEDU - Aprende tecnología trabajando como en la industria</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
     
     * {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
     }
     
+    code, .mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    
+    body {
+      background-color: #0a0a0a;
+    }
+    
+    /* Gradient text with cyan/green hacker aesthetic */
     .gradient-text {
-      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      background: linear-gradient(135deg, #00ff88 0%, #00d9ff 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
     
-    .card-hover {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Glowing effect for cards and elements */
+    .glow-border {
+      border: 1px solid rgba(0, 255, 136, 0.3);
+      box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
+      transition: all 0.3s ease;
     }
     
-    .card-hover:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    .glow-border:hover {
+      border-color: rgba(0, 255, 136, 0.6);
+      box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+      transform: translateY(-2px);
     }
     
+    /* Neon button effects */
+    .neon-button {
+      position: relative;
+      background: linear-gradient(135deg, #00ff88 0%, #00d9ff 100%);
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+    }
+    
+    .neon-button:hover {
+      box-shadow: 0 0 30px rgba(0, 255, 136, 0.8), 0 0 60px rgba(0, 217, 255, 0.4);
+      transform: translateY(-2px);
+    }
+    
+    /* Terminal-style tech badges */
     .tech-badge {
       transition: all 0.2s ease;
+      border: 1px solid rgba(0, 255, 136, 0.3);
+      font-family: 'JetBrains Mono', monospace;
     }
     
     .tech-badge:hover {
-      transform: scale(1.05);
-      background-color: #3b82f6;
-      color: white;
+      background: rgba(0, 255, 136, 0.1);
+      border-color: #00ff88;
+      box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+      color: #00ff88;
+    }
+    
+    /* Scanline animation for hacker feel */
+    @keyframes scan {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(100vh); }
+    }
+    
+    .scanline {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to bottom, transparent, rgba(0, 255, 136, 0.3), transparent);
+      animation: scan 8s linear infinite;
+      pointer-events: none;
+      z-index: 9999;
+    }
+    
+    /* Grid background pattern */
+    .grid-bg {
+      background-image: 
+        linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
     }
   </style>
 </head>
-<body class="bg-white text-gray-900">
+<body class="bg-black text-gray-100">
+  
+  <!-- Scanline effect overlay -->
+  <div class="scanline"></div>
   
   <!-- Header -->
-  <header class="border-b border-gray-200">
+  <header class="border-b border-gray-800 bg-black/80 backdrop-blur-sm sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-6 py-6">
       <div class="flex items-center justify-between">
-        <h1 class="text-2xl font-bold">LANEDU</h1>
-        <a href="#empieza" class="bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 transition-colors font-medium">
-          Empieza hoy
+        <h1 class="text-2xl font-bold mono">
+          <span class="text-[#00ff88]">&gt;</span> LANEDU<span class="text-[#00d9ff] animate-pulse">_</span>
+        </h1>
+        <a href="#empieza" class="neon-button text-black px-6 py-2.5 rounded-lg font-semibold mono">
+          EMPIEZA_HOY
         </a>
       </div>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="max-w-6xl mx-auto px-6 py-24 text-center">
+  <section class="max-w-6xl mx-auto px-6 py-24 text-center grid-bg">
+    <div class="mono text-[#00ff88] text-sm mb-4">&gt; INITIALIZING_SYSTEM...</div>
     <h2 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
       Aprende tecnología trabajando<br/>
       <span class="gradient-text">como en la industria</span>
     </h2>
-    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+    <p class="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
       En LANEDU aprendes resolviendo desafíos reales, usando las mismas herramientas y procesos que se utilizan en equipos profesionales.
     </p>
     <div class="mt-12">
-      <p class="text-2xl font-semibold text-gray-900">No solo estudias.<br/>Contribuyes.</p>
+      <p class="text-2xl font-semibold text-gray-200 mono">
+        <span class="text-[#00ff88]">$</span> No solo estudias.<br/>
+        <span class="text-[#00d9ff]">$</span> Contribuyes.
+      </p>
     </div>
   </section>
 
   <!-- Cómo funciona -->
-  <section class="bg-gray-50 py-20">
+  <section class="bg-gradient-to-b from-black to-gray-950 py-20">
     <div class="max-w-6xl mx-auto px-6">
-      <h3 class="text-4xl font-bold mb-16 text-center">¿Cómo funciona?</h3>
+      <h3 class="text-4xl font-bold mb-16 text-center mono">
+        <span class="text-[#00ff88]">// </span>¿Cómo funciona?
+      </h3>
       <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-white p-8 rounded-xl card-hover border border-gray-200">
-          <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-            </svg>
+        <div class="bg-gray-900 p-8 rounded-xl glow-border">
+          <div class="mono text-[#00ff88] text-xs mb-4">[MODULE_01]</div>
+          <h4 class="text-xl font-semibold mb-3 text-gray-100">Desafíos prácticos en repositorios reales</h4>
+          <div class="mt-4 text-xs mono text-gray-600">
+            &gt; git clone real-world-challenges
           </div>
-          <h4 class="text-xl font-semibold mb-3">Desafíos prácticos en repositorios reales</h4>
         </div>
         
-        <div class="bg-white p-8 rounded-xl card-hover border border-gray-200">
-          <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-            </svg>
+        <div class="bg-gray-900 p-8 rounded-xl glow-border">
+          <div class="mono text-[#00d9ff] text-xs mb-4">[MODULE_02]</div>
+          <h4 class="text-xl font-semibold mb-3 text-gray-100">Trabajo colaborativo con GitHub y Visual Studio</h4>
+          <div class="mt-4 text-xs mono text-gray-600">
+            &gt; git commit -m "teamwork"
           </div>
-          <h4 class="text-xl font-semibold mb-3">Trabajo colaborativo con GitHub y Visual Studio</h4>
         </div>
         
-        <div class="bg-white p-8 rounded-xl card-hover border border-gray-200">
-          <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
-            </svg>
+        <div class="bg-gray-900 p-8 rounded-xl glow-border">
+          <div class="mono text-[#00ff88] text-xs mb-4">[MODULE_03]</div>
+          <h4 class="text-xl font-semibold mb-3 text-gray-100">Evaluación mediante Pull Requests y revisiones</h4>
+          <div class="mt-4 text-xs mono text-gray-600">
+            &gt; git push origin feature-branch
           </div>
-          <h4 class="text-xl font-semibold mb-3">Evaluación mediante Pull Requests y revisiones</h4>
         </div>
         
-        <div class="bg-white p-8 rounded-xl card-hover border border-gray-200">
-          <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-            </svg>
+        <div class="bg-gray-900 p-8 rounded-xl glow-border">
+          <div class="mono text-[#00d9ff] text-xs mb-4">[MODULE_04]</div>
+          <h4 class="text-xl font-semibold mb-3 text-gray-100">Documentación viva, no PDFs estáticos</h4>
+          <div class="mt-4 text-xs mono text-gray-600">
+            &gt; cat docs/README.md
           </div>
-          <h4 class="text-xl font-semibold mb-3">Documentación viva, no PDFs estáticos</h4>
         </div>
       </div>
-      <p class="text-2xl font-semibold text-center mt-16">Aprendes haciendo, no mirando.</p>
+      <p class="text-2xl font-semibold text-center mt-16 mono">
+        <span class="text-[#00ff88]">console.log</span>(<span class="text-[#00d9ff]">"Aprendes haciendo, no mirando."</span>)
+      </p>
     </div>
   </section>
 
   <!-- Qué te llevas -->
-  <section class="max-w-6xl mx-auto px-6 py-20">
-    <h3 class="text-4xl font-bold mb-16 text-center">¿Qué te llevas?</h3>
+  <section class="max-w-6xl mx-auto px-6 py-20 grid-bg">
+    <h3 class="text-4xl font-bold mb-16 text-center mono">
+      <span class="text-[#00d9ff]">// </span>¿Qué te llevas?
+    </h3>
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="text-center p-6">
-        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-          </svg>
-        </div>
-        <h4 class="font-semibold text-lg mb-2">Experiencia real comprobable</h4>
+      <div class="text-center p-6 bg-gray-900/50 rounded-xl glow-border">
+        <div class="text-5xl mb-4 text-[#00ff88]">01</div>
+        <h4 class="font-semibold text-lg mb-2 text-gray-100">Experiencia real comprobable</h4>
       </div>
       
-      <div class="text-center p-6">
-        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path>
-          </svg>
-        </div>
-        <h4 class="font-semibold text-lg mb-2">Pull Requests revisados</h4>
+      <div class="text-center p-6 bg-gray-900/50 rounded-xl glow-border">
+        <div class="text-5xl mb-4 text-[#00d9ff]">02</div>
+        <h4 class="font-semibold text-lg mb-2 text-gray-100">Pull Requests revisados</h4>
       </div>
       
-      <div class="text-center p-6">
-        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
-          </svg>
-        </div>
-        <h4 class="font-semibold text-lg mb-2">Portafolio público</h4>
+      <div class="text-center p-6 bg-gray-900/50 rounded-xl glow-border">
+        <div class="text-5xl mb-4 text-[#00ff88]">03</div>
+        <h4 class="font-semibold text-lg mb-2 text-gray-100">Portafolio público</h4>
       </div>
       
-      <div class="text-center p-6">
-        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-          </svg>
-        </div>
-        <h4 class="font-semibold text-lg mb-2">Certificación basada en evidencia</h4>
+      <div class="text-center p-6 bg-gray-900/50 rounded-xl glow-border">
+        <div class="text-5xl mb-4 text-[#00d9ff]">04</div>
+        <h4 class="font-semibold text-lg mb-2 text-gray-100">Certificación basada en evidencia</h4>
       </div>
     </div>
-    <p class="text-2xl font-semibold text-center mt-16">Lo que sabes se demuestra.</p>
+    <p class="text-2xl font-semibold text-center mt-16 mono">
+      <span class="text-[#00ff88]">if</span> (knowledge) <span class="text-[#00d9ff]">{</span> proof.show() <span class="text-[#00d9ff]">}</span>
+    </p>
   </section>
 
   <!-- Tecnologías -->
-  <section class="bg-gray-50 py-20">
+  <section class="bg-gradient-to-b from-gray-950 to-black py-20">
     <div class="max-w-6xl mx-auto px-6">
-      <h3 class="text-4xl font-bold mb-12 text-center">Tecnologías</h3>
+      <h3 class="text-4xl font-bold mb-12 text-center mono">
+        <span class="text-[#00ff88]">// </span>TECH_STACK
+      </h3>
       <div class="flex flex-wrap justify-center gap-4 mb-16">
-        <span class="tech-badge px-6 py-3 bg-white border border-gray-300 rounded-lg font-medium cursor-pointer">Git</span>
-        <span class="tech-badge px-6 py-3 bg-white border border-gray-300 rounded-lg font-medium cursor-pointer">Python</span>
-        <span class="tech-badge px-6 py-3 bg-white border border-gray-300 rounded-lg font-medium cursor-pointer">.NET</span>
-        <span class="tech-badge px-6 py-3 bg-white border border-gray-300 rounded-lg font-medium cursor-pointer">PostgreSQL</span>
-        <span class="tech-badge px-6 py-3 bg-white border border-gray-300 rounded-lg font-medium cursor-pointer">Docker</span>
-        <span class="tech-badge px-6 py-3 bg-white border border-gray-300 rounded-lg font-medium cursor-pointer">Linux</span>
+        <span class="tech-badge px-6 py-3 bg-gray-900 rounded-lg font-medium cursor-pointer text-gray-300">&gt; Git</span>
+        <span class="tech-badge px-6 py-3 bg-gray-900 rounded-lg font-medium cursor-pointer text-gray-300">&gt; Python</span>
+        <span class="tech-badge px-6 py-3 bg-gray-900 rounded-lg font-medium cursor-pointer text-gray-300">&gt; .NET</span>
+        <span class="tech-badge px-6 py-3 bg-gray-900 rounded-lg font-medium cursor-pointer text-gray-300">&gt; PostgreSQL</span>
+        <span class="tech-badge px-6 py-3 bg-gray-900 rounded-lg font-medium cursor-pointer text-gray-300">&gt; Docker</span>
+        <span class="tech-badge px-6 py-3 bg-gray-900 rounded-lg font-medium cursor-pointer text-gray-300">&gt; Linux</span>
       </div>
-      <p class="text-2xl font-semibold text-center">La tecnología cambia.<br/>El método no.</p>
+      <p class="text-2xl font-semibold text-center mono">
+        <span class="text-gray-500">// La tecnología cambia.</span><br/>
+        <span class="text-[#00ff88]">// El método no.</span>
+      </p>
     </div>
   </section>
 
   <!-- LANEDU Labs -->
   <section class="max-w-6xl mx-auto px-6 py-20">
-    <div class="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-12 text-white text-center">
-      <h3 class="text-4xl font-bold mb-6">LANEDU Labs</h3>
-      <p class="text-xl mb-4 opacity-90">Nuestro laboratorio abierto donde ocurre el aprendizaje colaborativo.</p>
-      <p class="text-2xl font-semibold">Aquí se aprende como se trabaja.</p>
+    <div class="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-12 text-white text-center glow-border relative overflow-hidden">
+      <div class="absolute inset-0 grid-bg opacity-30"></div>
+      <div class="relative z-10">
+        <div class="mono text-[#00ff88] text-sm mb-4">&gt; ACCESSING_LABS...</div>
+        <h3 class="text-4xl font-bold mb-6 gradient-text">LANEDU Labs</h3>
+        <p class="text-xl mb-4 text-gray-300">Nuestro laboratorio abierto donde ocurre el aprendizaje colaborativo.</p>
+        <p class="text-2xl font-semibold mono">
+          <span class="text-[#00d9ff]">function</span> learn() <span class="text-[#00ff88]">{</span> 
+          <span class="text-gray-300">return</span> work<span class="text-[#00ff88]">();</span> 
+          <span class="text-[#00ff88]">}</span>
+        </p>
+      </div>
     </div>
   </section>
 
   <!-- CTA Final -->
-  <section id="empieza" class="bg-gray-50 py-20">
+  <section id="empieza" class="bg-gradient-to-b from-black to-gray-950 py-20">
     <div class="max-w-4xl mx-auto px-6 text-center">
-      <h3 class="text-4xl font-bold mb-6">Empieza hoy</h3>
-      <p class="text-xl text-gray-600 mb-10">Explora LANEDU Labs o participa en nuestros programas guiados.</p>
+      <h3 class="text-4xl font-bold mb-6 mono">
+        <span class="text-[#00ff88]">&gt; </span>Empieza hoy
+      </h3>
+      <p class="text-xl text-gray-400 mb-10">Explora LANEDU Labs o participa en nuestros programas guiados.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#" class="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg">
-          Explorar Labs
+        <a href="#" class="neon-button text-black px-8 py-4 rounded-lg font-semibold text-lg mono">
+          EXPLORAR_LABS
         </a>
-        <a href="#" class="bg-white text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors font-semibold text-lg">
-          Ver programas
+        <a href="#" class="bg-transparent text-[#00ff88] border-2 border-[#00ff88] px-8 py-4 rounded-lg hover:bg-[#00ff88] hover:text-black transition-all font-semibold text-lg mono">
+          VER_PROGRAMAS
         </a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="border-t border-gray-200 py-12">
+  <footer class="border-t border-gray-800 py-12 bg-black">
     <div class="max-w-6xl mx-auto px-6 text-center">
-      <p class="text-2xl font-semibold text-gray-900 mb-4">Aprende haciendo. Aprende con LANEDU.</p>
-      <p class="text-gray-600">© 2025 LANEDU. Todos los derechos reservados.</p>
+      <p class="text-2xl font-semibold text-gray-200 mb-4 mono">
+        <span class="text-[#00ff88]">$</span> Aprende haciendo. Aprende con LANEDU.
+      </p>
+      <p class="text-gray-600 mono text-sm">© 2025 LANEDU. All rights reserved.</p>
     </div>
   </footer>
 
